@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GestureBind</title>
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+
+  </head>
+<body class="min-w-full min-h-full">
+    <div class="flex flex-row min-w-full min-h-screen">
+      <section class="w-3/4 min-h-full">
+        <div class="p-4 h-3/4">
+          <canvas id="webcam" class="w-full h-full border border-black rounded-lg shadow-lg" width="1280" height="720"></canvas>
+        </div>
+        <div class="flex flex-col items-center justify-between p-4 bg-gray-100 border-t-2 border-gray-200 h-1/4">
+          <select id="webcamSelect" class="w-2/5">
+            <option value="">Select webcam...</option>
+          </select>
+          <p id="infoText" class="mb-6">No video input...</p>
+        </div>
+      </section>
+      <section class="w-1/4 min-h-full bg-gray-100 border-l-2 border-gray-200">
+        <div class="p-2 w-9/10 h-3/4">
+          <div id="gestureBox" class="flex flex-wrap justify-start w-full h-min p-2 border-2 border-gray-300 rounded-lg gap-x-2 gap-y-1">
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="./renderer.js" type="module"></script>
+</body>
+</html>
