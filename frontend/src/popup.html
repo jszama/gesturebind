@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add gesutre</title>
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="min-w-full min-h-full">
+    <form onsubmit="submitForm(event)" class="flex flex-col justify-center items-center text-sm my-10">
+            <input required type="text" id="gestureName" class="w-2/3 h-auto p-2 m-1 border-2 border-gray-300 rounded-lg" placeholder="Gesture description...">
+            <div class="flex flex-row items-center justify-center w-2/3">
+                    <select required id="gestureKey" class="w-1/2 p-2 border-2 border-gray-300 rounded-lg">
+                            <option value="">Select gesture...</option>
+                            <option value="1">1 finger</option>
+                            <option value="2">2 fingers</option>
+                            <option value="3">3 fingers</option>
+                            <option value="4">4 fingers</option>
+                            <option value="5">5 fingers</option>
+                    </select>
+                    <select required id="gestureAction" class="w-1/2 p-2 border-2 border-gray-300 rounded-lg">
+                            <option value="">Select action...</option>
+                            <option value="web">Open website</option>
+                            <option value="app">Open app</option>
+                    </select>
+            </div>
+            <input type="text" id="gestureUrl" class="w-2/3 p-2 m-1 border-2 border-gray-300 rounded-lg" placeholder="URL..." style="display: none;">
+            <input type="text" id="gestureApp" style="display: none;">
+            <input id="gestureSaveBtn" type="submit" value="Save" class="w-1/2 p-1 m-1 bg-green-400 rounded-lg text-white font-bold text-lg cursor-pointer">
+    </form>
+    <script>
+        const { ipcRenderer } = require('electron');
+    
+        function submitForm(event) {
+            event.preventDefault();
+    
+            description = document.getElementById('gestureName').value;
+            gesture = document.getElementById('gestureKey').value;
+            action = document.getElementById('gestureAction').value;
+
+            webLink = document.getElementById('gestureUrl').value;
+
+            if (webLink) {
+                if (!webLink.startsWith('http://')) {
+                    webLink = 'http://' + webLink;
+                }
+                action += webLink;
+            } else {
+                action += document.getElementById('gestureApp').value;
+            }
+
+            ipcRenderer.send('gesture-new', {description, gesture, action});
+        }
+        
+        const gestureAction = document.getElementById('gestureAction');
+        
+        gestureAction.addEventListener('change', () => {
+            if (gestureAction.value === 'web') {
+                document.getElementById('gestureUrl').style.display = 'block';
+            } else {
+                document.getElementById('gestureUrl').style.display = 'none';
+                ipcRenderer.send('open-file-dialog');
+            }
+        });
+    </script>
+</body>
+</html>
