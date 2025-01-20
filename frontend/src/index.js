@@ -146,7 +146,6 @@ function createPopupWindow() {
             ]
         }).then(result => {
             if (!result.canceled && result.filePaths.length > 0) {
-                console.log('Selected file:', result.filePaths[0]);
                 popupWindow.webContents.executeJavaScript(`
                     document.getElementById("gestureApp").value = '${result.filePaths[0].replace(/\\/g, '\\\\')}';
                 `);
@@ -164,11 +163,7 @@ ipcMain.on('open-popup', () => {
 });
 
 ipcMain.on('close-popup', () => {
-    console.log('close-popup event received');
     if (popupWindow) {
-        console.log('Closing popup window');
         popupWindow.close();
-    } else {
-        console.log('popupWindow does not exist');
     }
 });

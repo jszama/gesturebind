@@ -39,7 +39,6 @@ function loadButtons() {
 }
 
 function clearButtons() {
-    console.log("clearing buttons")
     gestureBox.innerHTML = '';
 }
 
@@ -136,7 +135,6 @@ ipcRenderer.on('gesture-new', (event, data) => {
 
 function createGesture(description, gesture, action, duplicate=false) {
     if (duplicate) {
-        console.log("duplicate")
         fs.readFile('./user/binds.txt', 'utf8', (err, data) => {
             if (err) {
                 console.error('Error reading file:', err);
@@ -276,7 +274,6 @@ ipcRenderer.on('gesture-detected', (event, data) => {
 function gestureDetected(gesture) {
     const action = commands[gesture].substring(0,4).trim();
     const path = commands[gesture].substring(4).trim();
-    console.log(action, path);
     if (action === 'app') {
         openFile(path);
     } else if (action === 'web') {
