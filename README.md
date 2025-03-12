@@ -4,7 +4,7 @@ GestureBind is a powerful and lightweight desktop application designed to bring 
 
 ## Features
 
-- **Gesture Recognition**: Leverages MediaPipe to achieve 90% accuracy in recognizing gestures.
+- **Gesture Recognition**: Leverages MediaPipe to achieve 83% (v1.0) accuracy in recognizing gestures.
 - **Cross-Platform Compatibility**: Works seamlessly across Windows, macOS, and Linux.
 - **Low Resource Usage**: Designed for optimal performance, ensuring minimal impact on system resources.
 - **Customizable Gestures**: Map gestures to specific actions for personalized interaction.
