@@ -16,6 +16,15 @@ GestureBind is a powerful and lightweight desktop application designed to bring 
 - **MediaPipe**: Gesture recognition and tracking.
 - **Flask**: RESTful API for communication between the frontend and backend.
 
+## Testing Results
+To test GestureBind, I am using a [Kaggle dataset](https://www.kaggle.com/datasets/koryakinp/fingers) which has a large image dataset of different gestures.
+
+### Version 1.0
+The testing confusion matrix of GestureBind v1.0, generated on 12/03/2025, is shown below:
+![Confusion Matrix](https://raw.githubusercontent.com/jszama/gesturebind/main/backend/test_results/GestureBind_v1_confusion_matrix.png?token=GHSAT0AAAAAADACDJU5QIRC7CTVI7RTW27EZ6SAHIA)
+
+The overall accuracy of the gesture recognition system was 83%, demonstrating reliable performance in various conditions.
+
 ## Installation
 
 Follow these steps to set up GestureBind on your machine:
