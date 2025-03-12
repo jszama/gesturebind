@@ -40,10 +40,14 @@
 
             webLink = document.getElementById('gestureUrl').value;
 
-            if (webLink) {
-                if (!webLink.startsWith('http://')) {
-                    webLink = 'http://' + webLink;
+            if (webLink != null) {
+                webLink = webLink.replace(/[^a-zA-Z0-9]/g, '');
+                
+                if (webLink.length === 0) {
+                    alert('Invalid URL');
+                    return;
                 }
+
                 action += webLink;
             } else {
                 action += document.getElementById('gestureApp').value;
