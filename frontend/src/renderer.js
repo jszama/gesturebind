@@ -110,7 +110,7 @@ function handleSelectMenuChange() {
 
                                     setTimeout(() => {
                                         isGestureDetected = false;
-                                    }, 5000);
+                                    }, 2500);
                                 }
                             } else if (data.error) {
                                 infoText.textContent = `${data.error}`;
