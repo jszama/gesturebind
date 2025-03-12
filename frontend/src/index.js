@@ -53,7 +53,9 @@ function createWindow() {
 
 function runPythonBackend() {
     const pythonScriptPath = path.join(__dirname, '../../backend/backend.py');
-    const pythonProcess = spawn('python', [pythonScriptPath]);
+    const pythonProcess = spawn('python', [pythonScriptPath], { detached: true });
+
+    pythonProcess.unref();
 
     pythonProcess.stdout.on('data', (data) => {
         console.log(`stdout: ${data}`);
