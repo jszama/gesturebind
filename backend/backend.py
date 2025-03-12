@@ -25,9 +25,6 @@ if __name__ == '__main__':
     package_installer = PackageInstaller(['flask', 'opencv-python', 'numpy', 'setuptools', 'wheel', 'waitress', 'mediapipe'])
     package_installer.install_missing_packages()
     
-    if environment == 'test':
-        gesture_detector = GestureDetector(min_detection_confidence=0.5, min_tracking_confidence=0.5)
-    else:
-        gesture_detector = GestureDetector()
+    gesture_detector = GestureDetector()
         
     serve(app, host='127.0.0.1', port=5000)
