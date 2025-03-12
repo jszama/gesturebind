@@ -16,14 +16,21 @@ GestureBind is a powerful and lightweight desktop application designed to bring 
 - **MediaPipe**: Gesture recognition and tracking.
 - **Flask**: RESTful API for communication between the frontend and backend.
 
-## Testing Results
-To test GestureBind, I am using a [Kaggle dataset](https://www.kaggle.com/datasets/koryakinp/fingers) which has a large image dataset of different gestures.
+## Testing Results  
 
-### Version 1.0
-The testing confusion matrix of GestureBind v1.0, generated on 12/03/2025, is shown below:
-![Confusion Matrix](https://raw.githubusercontent.com/jszama/gesturebind/main/backend/test_results/GestureBind_v1_confusion_matrix.png?token=GHSAT0AAAAAADACDJU5QIRC7CTVI7RTW27EZ6SAHIA)
+To test GestureBind, I used a [Kaggle dataset](https://www.kaggle.com/datasets/koryakinp/fingers) containing a large collection of hand gesture images.  
 
-The overall accuracy of the gesture recognition system was 83%, demonstrating reliable performance in various conditions.
+### Version 1.0  
+
+The confusion matrix for GestureBind v1.0, generated on **March 12, 2025**, is shown below:  
+
+![Confusion Matrix](https://raw.githubusercontent.com/jszama/gesturebind/main/backend/test_results/GestureBind_v1_confusion_matrix.png?token=GHSAT0AAAAAADACDJU5QIRC7CTVI7RTW27EZ6SAHIA)  
+
+GestureBind v1.0 achieved an **83% accuracy rate**, demonstrating reliable performance across various conditions. However, the confusion matrix indicates that most misclassifications occurred when detecting **single-finger gestures**, which were frequently misinterpreted as two-finger gestures.  
+
+### Future Improvements  
+
+For the next version, I plan to optimize the model to improve **single-finger gesture detection** and enhance overall accuracy.
 
 ## Installation
 
