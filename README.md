@@ -23,8 +23,7 @@ To test GestureBind, I used a [Kaggle dataset](https://www.kaggle.com/datasets/k
 ### Version 1.0  
 
 The confusion matrix for GestureBind v1.0, generated on **March 12, 2025**, is shown below:  
-
-![Confusion Matrix](https://raw.githubusercontent.com/jszama/gesturebind/main/backend/test_results/GestureBind_v1_confusion_matrix.png?token=GHSAT0AAAAAADACDJU5QIRC7CTVI7RTW27EZ6SAHIA)  
+![Confusion Matrix v1.0](backend/test_results/GestureBind_v1_confusion_matrix.png)
 
 GestureBind v1.0 achieved an **83% accuracy rate**, demonstrating reliable performance across various conditions. However, the confusion matrix indicates that most misclassifications occurred when detecting **single-finger gestures**, which were frequently misinterpreted as two-finger gestures.  
 
